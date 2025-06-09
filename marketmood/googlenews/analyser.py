@@ -7,7 +7,6 @@ def analyze_sentiment(headlines):
     for text in headlines:
         score = analyzer.polarity_scores(text)
         results.append({
-            "text": text,
             "compound": score["compound"],
             "label": label_from_score(score["compound"])
         })
