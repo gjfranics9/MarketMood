@@ -1,10 +1,11 @@
 from marketmood.googlenews.analyser import analyze_sentiment
 from marketmood.googlenews.scraper import get_headlines
-from collections import Counter
+from urllib.parse import quote
 
 
 def run_analysis(keyword):
-    headlines = get_headlines(keyword)
+    keyword_encoded = quote(keyword)
+    headlines = get_headlines(keyword_encoded)
     results = analyze_sentiment(headlines)
 
 
