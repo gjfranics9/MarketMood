@@ -15,7 +15,7 @@ def getDataFromUser():
         stored_data = request.form.get('user_input', '')
         try:
             if stored_data.strip() == "":
-                result_html = "<p class='error'>Please enter a valid search term.</p>"
+                result_html = render_template('invalidSearch.html')
             else:
                 analysis = runAnalysis.run_analysis(stored_data)
                 print(stored_data)
@@ -24,24 +24,11 @@ def getDataFromUser():
                         f"<strong>Headline:</strong> {analysis[0][i]}<br><strong>Sentiment:</strong> {analysis[1][i]}"
                         for i in range(len(analysis[0]))
                     )
-
-                    result_html = f'''
-                        <div class="results">
-                            <details>
-                                <summary><strong>Results for:</strong> <em>{stored_data}</em></summary>
-                                <div style="margin-left: 20px; padding-top: 10px;">
-                                    {headline_results_list}
-                                </div>
-                            </details>
-                        </div>
-                    '''
-
-
-
+                    result_html = render_template('resultsTemplate.html', stored_data=stored_data, headline_results_list=headline_results_list)
                 else:
-                    result_html = f"<div class='results'><p>No headlines found for: <em>{stored_data}</em></p></div>"
+                    result_html = render_template('headlineError.html', keyword=stored_data)
         except Exception as e:
-            result_html = f"<p class='error'>Error during analysis: {e}</p>"
+            result_html = render_template('analysisError.html', error=str(e))
 
 
     return render_template('mainPage.html', result_html=result_html)
