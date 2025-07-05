@@ -1,8 +1,27 @@
 <div class="results">
     <details>
-        <summary><strong>Results for:</strong> <em>{{stored_data}}</em></summary>
+        <summary><strong>Results for:</strong> <em>{{ stored_data }}</em></summary>
         <div style="margin-left: 20px; padding-top: 10px;">
-            {{headline_results_list}}
+            <ul>
+                {% for item in results %}
+                    <li style="padding-bottom:10px;">
+                        <strong>Headline:</strong> {{ item.headline }}<br>
+                        <strong>Sentiment:</strong>
+                        <span style="color:
+                            {% if item.sentiment.label == 'positive' %}
+                                green
+                            {% elif item.sentiment.label == 'neutral' %}
+                                gray
+                            {% else %}
+                                red
+                            {% endif %}
+                        ;">
+                            {{ item.sentiment.label }}
+                        </span>
+                        (Score: {{ item.sentiment.compound }})
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
     </details>
 </div>

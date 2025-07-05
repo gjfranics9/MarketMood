@@ -4,9 +4,10 @@ from marketmood.googlenews import runAnalysis
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/analyse', methods=['GET', 'POST'])
 def getDataFromUser():
     result_html = ""
+    template = ""
     
     if 'clear' in request.form:
             return redirect(url_for('getDataFromUser'))
@@ -15,20 +16,39 @@ def getDataFromUser():
         stored_data = request.form.get('user_input', '')
         try:
             if stored_data.strip() == "":
-                result_html = render_template('invalidSearch.html')
+                template = render_template('invalidSearch.html')
+                result_html = formatPageHTML(template)
             else:
                 analysis = runAnalysis.run_analysis(stored_data)
                 print(stored_data)
                 if analysis and analysis[0]:
-                    headline_results_list = "<br><br>".join(
-                        f"<strong>Headline:</strong> {analysis[0][i]}<br><strong>Sentiment:</strong> {analysis[1][i]}"
-                        for i in range(len(analysis[0]))
-                    )
-                    result_html = render_template('resultsTemplate.html', stored_data=stored_data, headline_results_list=headline_results_list)
+                    results = format_analysis_results_as_list(analysis)
+                    template = render_template('resultsTemplate.html', stored_data=stored_data, results=results)
+                    result_html = formatPageHTML(template)
                 else:
-                    result_html = render_template('headlineError.html', keyword=stored_data)
+                    template = render_template('headlineError.html', keyword=stored_data)
+                    result_html = formatPageHTML(template)
         except Exception as e:
-            result_html = render_template('analysisError.html', error=str(e))
+            template = render_template('analysisError.html', error=str(e))
+            result_html = formatPageHTML(template)
 
 
-    return render_template('mainPage.html', result_html=result_html)
+    template = render_template('mainPage.html', result_html=result_html)
+    return formatPageHTML(template)
+
+def format_analysis_results_as_list(analysis):
+    results = []
+    for headline, sentiment in zip(analysis[0], analysis[1]):
+        results.append({
+            'headline': headline,
+            'sentiment': sentiment
+        })
+    return results
+
+def formatPageHTML(page_content):
+    final_html = """
+    """
+    final_html += page_content
+    final_html += render_template('topBar.html')
+    final_html += render_template('styles.html')
+    return final_html
