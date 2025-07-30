@@ -2,13 +2,17 @@
     <head>
     </head>
     <body>
-        <form method="POST">
-            <input type="text" name="user_input" placeholder="Enter something" required>
-            <div class="button-group">
-                <input type="submit" value="Submit">
-                <button type="button" onclick="window.location.href='/analyse'" class="clear">Clear</button>
-            </div>
-        </form>
+        <div class="Searchbar">
+            <h1>Analyser</h1>
+            <p>Enter your text below to analyze the news.</p>
+            <form method="POST">
+                <input type="text" name="user_input" placeholder="Enter something" required>
+                <div class="button-group">
+                    <input type="submit" value="Submit">
+                    <button type="button" onclick="window.location.href='/analyse'" class="clear">Clear</button>
+                </div>
+            </form>
+        </div>
         {{ result_html | safe }}
     </body>
     </html>

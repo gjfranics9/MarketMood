@@ -6,6 +6,7 @@
         color: #333;
         margin: 0;
     }
+
     .top-bar {
         position: fixed;
         top: 0;
@@ -20,36 +21,34 @@
         box-sizing: border-box;
         z-index: 10;
     }
+
     .top-bar h1 {
         color: white;
         font-size: 1.5em;
         margin: 0;
     }
+
     .top-bar nav ul {
         list-style: none;
         display: flex;
         margin: 0;
         padding: 0;
     }
+
     .top-bar nav ul li {
         margin-left: 20px;
     }
+
     .top-bar nav ul li a {
         color: white;
         text-decoration: none;
         font-size: 1em;
     }
+
     .top-bar nav ul li a:hover {
         text-decoration: underline;
     }
-    form {
-        background: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        max-width: 600px;
-        margin: 100px auto 20px auto; /* top margin accounts for fixed top bar */
-    }
+
     input[type="text"] {
         width: 100%;
         padding: 10px;
@@ -58,12 +57,16 @@
         border-radius: 4px;
         box-sizing: border-box;
     }
+
     .button-group {
         display: flex;
         gap: 10px;
+        justify-content: center;
     }
+
     input[type="submit"],
-    button.clear {
+    button.clear,
+    button.analyse {
         flex: 1;
         padding: 10px 15px;
         border: none;
@@ -71,32 +74,36 @@
         border-radius: 4px;
         cursor: pointer;
     }
+
     button.analyse {
-        flex: 1;
-        padding: 10px 15px;
-        border: 10px;
-        color: white;
-        border-radius: 4px;
-        cursor: pointer
+        background-color: #4433f6;
+        padding: 14px 28px;
+        font-size: 1.1em;
+        font-weight: bold;
+        border-radius: 6px;
+        min-width: 180px;
     }
+
+    button.analyse:hover {
+        background-color: #362ae0;
+    }
+
     input[type="submit"] {
         background-color: #4CAF50;
     }
+
     input[type="submit"]:hover {
         background-color: #45a049;
     }
+
     button.clear {
         background-color: #f44336;
     }
+
     button.clear:hover {
         background-color: #d32f2f;
     }
-    button.analyse {
-        background-color: #4433f6
-    }
-    button.analyse:hover {
-        background-color:
-    }
+
     .results {
         background: #fff;
         padding: 20px;
@@ -105,13 +112,51 @@
         max-width: 700px;
         margin: 20px auto;
     }
+
     .error {
         color: red;
         text-align: center;
     }
+
     details summary {
         cursor: pointer;
         font-size: 1.2em;
         padding: 5px;
+    }
+
+    .Summary,
+    .Searchbar,
+    .Data_Summary {
+        background-color: #ffffff;
+        padding: 15px 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        max-width: 700px;
+    }
+
+    .Data_Summary{
+        margin: auto auto 20px auto;
+    }
+    .Searchbar,
+    .Summary{
+        margin: 80px auto 20px auto;
+    }
+
+
+    .Summary {
+        text-align: center;
+    }
+
+    .Summary h1,
+    .Searchbar h1 {
+        margin-top: 0;
+        font-size: 2em;
+        color: #222;
+    }
+
+    .Summary p,
+    .Searchbar p {
+        font-size: 1em;
+        color: #555;
     }
 </style>

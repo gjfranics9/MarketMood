@@ -31,20 +31,18 @@ def find_results_from_api(stored_data):
     template = ""
     
     try:
-        #case that the user has entered any data
         if stored_data.strip() != "":
             analysis = runAnalysis.run_analysis(stored_data)
             print(stored_data)
-            # If analysis returns valid data
             if analysis and analysis[0]:
                 results = format_analysis_results_as_list(analysis)
-                template = render_template('resultsTemplate.html', stored_data=stored_data, results=results)
+                template = render_template('dataSummary.html', Sentiment="Positive", Score=0)
+                template1 = render_template('resultsTemplate.html', stored_data=stored_data, results=results)
                 result_html = formatPageHTML(template)
-            # If analysis returns no data
+                result_html += formatPageHTML(template1)
             else:
                 template = render_template('headlineError.html', keyword=stored_data)
-                result_html = formatPageHTML(template)
-        # case that the user has not entered any data        
+                result_html = formatPageHTML(template)     
         else:
             template = render_template('invalidSearch.html')
             result_html = formatPageHTML(template)
@@ -52,6 +50,5 @@ def find_results_from_api(stored_data):
         template = render_template('analysisError.html', error=str(e))
         result_html = formatPageHTML(template)
 
-
-    template = render_template('mainPage.html', result_html=result_html)
+    template = render_template('analysisPage.html', result_html=result_html)
     return formatPageHTML(template)

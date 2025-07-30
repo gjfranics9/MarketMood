@@ -1,7 +1,15 @@
 <html>
     <body>
-        <div class="button-group">
-            <button type="button" onclick="window.location.href='/analyse'" class="analyse">Analyse!</button>
+        <div class="Summary">
+            <h1>Market Mood Analysis</h1>
+            <p>Enter your text below to analyze the market mood.</p>
+            <p>When you submit, headlines will be retrieved from news sources and analyzed for sentiment.</p>
+            <p>Click "Analyse!" to start the analysis.</p>
+            <form method="POST">
+            <div class="button-group">
+                <button type="button" onclick="window.location.href='/analyse'" class="analyse">Analyse!</button>
+            </div>
+        </form>
         </div>
     </body>
 </html>
