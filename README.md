@@ -32,8 +32,8 @@ flask run
 Then visit http://127.0.0.1:5000/analyse in your browser.
 
 📁 Project Structure
-
-marketmood//n
+'''
+marketmood/
 ├── run.py
 ├── __init__.py
 ├── frontend/
@@ -55,7 +55,7 @@ marketmood//n
 │       ├── analyser.py
 │       └── scraper.py
 └── README.md
-
+'''
 
 Currently working on:
 Adding a page that tests for internet connection when run - a "No connection" page
