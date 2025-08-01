@@ -1,4 +1,4 @@
-#**MarketMood**
+#MarketMood
 
 MarketMood is a real-time sentiment analyser for public news headlines, allowing you to gauge up-to-date sentiment on your favourite topics, people, or companies.
 
