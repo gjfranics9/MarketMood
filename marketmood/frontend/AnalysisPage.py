@@ -12,7 +12,7 @@ def analysisPage():
         stored_data = request.form.get('user_input', '')
         return find_results_from_api(stored_data)
     
-    template = render_template('analysisPage.html')
+    template = render_template('pages/analysisPage.html')
     return formatPageHTML(template)
     
 def format_analysis_results_as_list(analysis):
@@ -41,14 +41,14 @@ def find_results_from_api(stored_data):
                 result_html = formatPageHTML(template)
                 result_html += formatPageHTML(template1)
             else:
-                template = render_template('headlineError.html', keyword=stored_data)
+                template = render_template('errors/headlineError.html', keyword=stored_data)
                 result_html = formatPageHTML(template)     
         else:
-            template = render_template('invalidSearch.html')
+            template = render_template('errors/invalidSearch.html')
             result_html = formatPageHTML(template)
     except Exception as e:
-        template = render_template('analysisError.html', error=str(e))
+        template = render_template('errors/analysisError.html', error=str(e))
         result_html = formatPageHTML(template)
 
-    template = render_template('analysisPage.html', result_html=result_html)
+    template = render_template('pages/analysisPage.html', result_html=result_html)
     return formatPageHTML(template)

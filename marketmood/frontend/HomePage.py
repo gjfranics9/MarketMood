@@ -3,6 +3,6 @@ from marketmood.frontend.FormatHTML import formatPageHTML
 
 def homePage():
     
-    template = render_template('homePage.html')
+    template = render_template('pages/homePage.html')
     
     return formatPageHTML(template)
