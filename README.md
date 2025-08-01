@@ -16,7 +16,7 @@ VADER
 Feedparser
 
 >Setup Instructions
-
+```
 Clone the repository
 git clone https://github.com/yourusername/marketmood.git
 cd marketmood
@@ -30,6 +30,7 @@ export FLASK_APP=app.py
 export FLASK_ENV=development
 flask run
 Then visit http://127.0.0.1:5000/analyse in your browser.
+```
 
 >📁 Project Structure
 ```
