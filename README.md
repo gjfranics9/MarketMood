@@ -33,7 +33,7 @@ Then visit http://127.0.0.1:5000/analyse in your browser.
 
 📁 Project Structure
 
-marketmood/
+marketmood//n
 ├── run.py
 ├── __init__.py
 ├── frontend/
