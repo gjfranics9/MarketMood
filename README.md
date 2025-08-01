@@ -17,19 +17,19 @@ Feedparser
 
 >Setup Instructions
 ```
-Clone the repository
-git clone https://github.com/yourusername/marketmood.git
-cd marketmood
-Create and activate virtual environment
-python3 -m venv venv
-source venv/bin/activate  # On Windows use venv\Scripts\activate
-Install requirements
-pip install -r requirements.txt
-Run the Flask app
-export FLASK_APP=app.py
-export FLASK_ENV=development
-flask run
-Then visit http://127.0.0.1:5000/analyse in your browser.
+- Clone the repository
+- git clone https://github.com/yourusername/marketmood.git
+- cd marketmood
+- Create and activate virtual environment
+- python3 -m venv venv
+- source venv/bin/activate  # On Windows use venv\Scripts\activate
+- Install requirements
+- pip install -r requirements.txt
+- Run the Flask app
+- export FLASK_APP=app.py
+- export FLASK_ENV=development
+- flask run
+- Then visit http://127.0.0.1:5000/analyse in your browser.
 ```
 
 >📁 Project Structure
