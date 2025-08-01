@@ -31,7 +31,7 @@ export FLASK_ENV=development
 flask run
 Then visit http://127.0.0.1:5000/analyse in your browser.
 
-📁 Project Structure
+>📁 Project Structure
 '''
 marketmood/
 ├── run.py
