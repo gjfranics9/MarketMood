@@ -58,6 +58,7 @@ marketmood/
 ```
 
 >Currently working on:
+
 Adding a page that tests for internet connection when run - a "No connection" page
 
 >Future Improvements
