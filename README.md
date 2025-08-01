@@ -1,21 +1,21 @@
-MarketMood
+>MarketMood
 
 MarketMood is a real-time sentiment analyser for public news headlines, allowing you to gauge up-to-date sentiment on your favourite topics, people, or companies.
 
-Features
+>Features
 
 Analyse current sentiment from news headlines (and extendable to tweets)
 Clean web interface using Flask
 Displays headline summaries with sentiment scores (positive, neutral, negative)
 
-Technologies Used
+>Technologies Used
 
 Python 3
 Flask
 VADER
 Feedparser
 
-Setup Instructions
+>Setup Instructions
 
 Clone the repository
 git clone https://github.com/yourusername/marketmood.git
@@ -56,10 +56,11 @@ marketmood/
 │       └── scraper.py
 └── README.md
 ```
-Currently working on:
+
+>Currently working on:
 Adding a page that tests for internet connection when run - a "No connection" page
 
-Future Improvements
+>Future Improvements
 
 Integrate Twitter API for live tweet sentiment
 Add database storage for analysed results
@@ -69,14 +70,13 @@ Add graphics to show sentiment over time
 Have a list that tracks the same words daily
 
 
-Contributing
+>Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change or improve.
 
-License
+>License
 
 MIT
 
-Contact
 Created by George Francis – LinkedIn
 
