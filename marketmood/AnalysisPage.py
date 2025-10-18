@@ -1,6 +1,6 @@
 from flask import request, url_for, redirect, render_template
-from marketmood.frontend.FormatHTML import formatPageHTML
-from marketmood.googlenews import runAnalysis
+from FormatHTML import formatPageHTML
+from googlenews import runAnalysis
 
 
 def analysisPage():

@@ -1,5 +1,5 @@
-from marketmood.googlenews.analyser import analyze_sentiment
-from marketmood.googlenews.scraper import get_headlines
+from googlenews.analyser import analyze_sentiment
+from googlenews.scraper import get_headlines
 from urllib.parse import quote
 
 
