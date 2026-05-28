@@ -72,9 +72,6 @@ Add graphics to show sentiment over time
 Have a list that tracks the same words daily
 
 
-## **Contributing**
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change or improve.
 
 ## **License**
 
